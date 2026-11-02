@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Me | Ibikunle Peace Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="nav-placeholder"></div>
+    <main>
+      <section class="page-title">
+        <h1>Contact Me:</h1>
+        <p>Have a question or a project in mind? Send me a message.</p>
+      </section>
+
+      <section class="contact">
+          <!-- action="https://formspree.io/f/mgaapldz"
+          method="POST" -->
+        <form
+          id="contact-form"
+          novalidate
+        >
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" autocomplete="name" />
+            <small class="error" id="name-error"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email" id="email" name="email" autocomplete="email" />
+            <small class="error" id="email-error"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone number:</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" />
+            <small class="error" id="phone-error"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5"></textarea>
+            <small class="error" id="message-error"></small>
+          </div>
+
+          <button type="submit" class="btn">Send message</button>
+          <p id="form-success" class="success" role="status"></p>
+        </form>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="main-footer">
+        <div class="footer-name">
+          <h1>Ibikunle Peace</h1>
+          <p>
+            A brand designer and emerging software developer exploring
+            technology and creativity.
+          </p>
+          <div class="socials">
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/Pekoder"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><i class="fa-brands fa-square-github"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/ibikunle_peace/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><i class="fa-brands fa-square-instagram"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/peace-ibikunle-b6a611418/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B1M5e227OSFKxx4ryic4gxA%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><i class="fa-brands fa-linkedin"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/ibikunlepeace1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fa-brands fa-square-facebook"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://wa.me/2349158611048"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fa-brands fa-square-whatsapp"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-nav">
+          <div>
+            <ul class="footer-links">
+              <li>
+                <h2>Navigation</h2>
+              </li>
+              <li><a href="index.html" class="active">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="projects.html">Projects</a></li>
+              <li><a href="planner.html">Planner</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="last">
+        <p>
+          &copy; 2026 Ibikunle Peace. All rights reserved. Designed by Pekan.
+        </p>
+      </div>
+    </footer>
+    <script src="js/include-nav.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/include-nav.js"></script>
+  </body>
+</html>

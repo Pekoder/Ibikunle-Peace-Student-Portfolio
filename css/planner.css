@@ -1,0 +1,144 @@
+:root {
+  --paper: #f6f4f1;
+  --stone: #e4ded2;
+  --coral: #f95c4b;
+  --black: #000000;
+  --shadow: rgba(0, 0, 0, 0.107);
+
+  --font-heading: "Space Grotesk", sans-serif;
+  /*--font-heading: "Google Sans";*/
+  --font-body: "Inter", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scrollbar-color: var(--coral);
+}
+body{
+    height: 100%;
+}
+main{
+      margin: 0 auto;
+  padding: 1rem 2.5rem;
+}
+.planner {
+  /* max-width: 700px; */
+  margin: 0 auto;
+  padding-top: 1rem;
+  /* padding: 1rem 2.5rem;   */
+
+  /* padding: 2rem 1.5rem 4rem; */
+}
+.page-title h1 {
+    letter-spacing: -0.07em;
+
+}
+.task-form {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.task-form input[type="text"] {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.85rem 1rem;
+  font: inherit;
+  background: var(--paper);
+  border: 2px solid var(--coral);
+  border-radius: 10px;
+}
+
+.task-form input[type="text"]:focus {
+  outline: 2px solid var(--coral);
+  outline-offset: 2px;
+}
+
+.task-form .btn {
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  background: var(--coral);
+  padding: 0.85rem 1.25rem;
+  transition:all 0.3s ease;
+  border-radius: 10px;
+}
+.task-form .btn:hover {
+  background: var(--black);
+  color: var(--paper);
+}
+
+.task-count {
+  margin: 1.5rem 0 1rem;
+  font-weight: 500;
+}
+
+.task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--stone);
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  transition: opacity 0.25s ease;
+}
+
+.task input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: var(--black);
+  cursor: pointer;
+}
+
+.task span {
+  flex: 1;
+}
+
+.task.done {
+  opacity: 0.6;
+}
+
+.task.done span {
+  text-decoration: line-through;
+}
+
+.delete-btn {
+  background: none;
+  border: 2px solid var(--black);
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: var(--coral);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
