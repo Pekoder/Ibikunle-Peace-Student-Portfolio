@@ -42,9 +42,8 @@ main .title {
   margin-top: 30px;
 }
 
-.page-title h1{
+.page-title h1 {
   letter-spacing: -0.06em;
-
 }
 .aboutflex {
   display: grid;
@@ -68,7 +67,6 @@ audio::-webkit-media-controls-panel {
   background-color: var(--stone);
 }
 .about-img {
-
   position: relative;
   width: 100%;
   height: auto;
@@ -80,7 +78,6 @@ audio::-webkit-media-controls-panel {
   background-color: var(--stone);
 }
 .about-img img {
-
   position: absolute;
   inset: 0;
   width: 100%;
@@ -91,7 +88,8 @@ audio::-webkit-media-controls-panel {
 }
 .content-section {
   background-color: var(--stone);
-  padding: 1.5rem 2.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 .content-section h2 {
   text-decoration: underline;
@@ -116,27 +114,27 @@ audio::-webkit-media-controls-panel {
   grid-template-columns: 1fr 1fr;
 }
 .content-section ul {
-    list-style: none;
-    margin-top: 10px;
-    margin-bottom: 5px;
+  list-style: none;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 .alt {
-    background-color: transparent;
+  background-color: transparent;
 }
 .content-section ul li {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--coral);
-    padding: 10px;
-    border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--coral);
+  padding: 10px;
+  border-radius: 10px;
 }
 .alt ul li {
-    background-color: var(--stone);
+  background-color: var(--stone);
 }
 .content-section ul li i {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 .hobbies ul {
   display: flex;
@@ -151,7 +149,7 @@ audio::-webkit-media-controls-panel {
   padding: 20px;
 }
 .hobbies-card i {
-    border-radius: 10px;
+  border-radius: 10px;
   background-color: var(--coral);
   padding: 10px;
   width: fit-content;
@@ -165,17 +163,24 @@ audio::-webkit-media-controls-panel {
     display: flex;
     justify-content: space-between;
     align-items: start;
-    gap: 20px;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3rem;
   }
-  .about-img{
-     height: 50vh;
+  .aboutflex p {
+    max-width: 62ch;
+  }
+  .about-img {
+    aspect-ratio: 4 / 5;
+    height: auto;
+    max-height: 300px;
   }
   .skills-list {
     grid-template-columns: repeat(3, 1fr);
   }
   .hobbies ul {
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
   }
   .hobbies ul li {
     flex-direction: column;
@@ -184,38 +189,10 @@ audio::-webkit-media-controls-panel {
   }
 }
 
-
-/* Bottom */
-
-
-
-
-
-
-.about-img img {
+@media (min-width: 950px) {
+  
+  .about-img {
+    max-height: 330px; 
  
 }
-
-@media (min-width: 768px) {
-  .aboutflex {
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 3rem;
-  }
-
-  .aboutflex p {
-    max-width: 62ch;
-  }
-
-  .about-img {
-    aspect-ratio: 4 / 5;
-    height: auto;
-    max-height: 300px;
-  }
-
-  /* Three equal hobby cards */
-  .hobbies ul {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
 }
