@@ -4,23 +4,26 @@
   --coral: #f95c4b;
   --black: #000000;
   --shadow: rgba(0, 0, 0, 0.107);
+  --container: 1100px;
+  --gutter: 2.5rem;
+  --side: max(var(--gutter), calc((100% - var(--container)) / 2));
 
   --font-heading: "Space Grotesk", sans-serif;
-  /*--font-heading: "Google Sans";*/
   --font-body: "Inter", sans-serif;
 }
-
+html {
+  scroll-behavior: smooth;
+  scrollbar-color: var(--coral) var(--paper);
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
-  scrollbar-color: var(--coral);
+
 }
 
 body {
   font-family: var(--font-body);
-  /* background: var(--paper); */
   background-color: #f6f4f1;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%23f95c4b' fill-opacity='0.05'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
   color: var(--black);
@@ -29,21 +32,22 @@ body {
   margin: 0;
   padding: 0;
   transition: all 0.3s ease;
-}
-/* body {
-  font-family: var(--font-body);
-  background: var(--paper);
-  color: var(--black);
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  transition: all 0.3s ease;
-} */
+} 
+
+
 
 h1,
 h2,
 h3 {
   font-family: var(--font-heading);
+}
+
+.navbar,
+main .hero,
+.bio,
+.highlights,
+.site-footer {
+  padding-inline: var(--side);
 }
 
 #nav-placeholder {
@@ -58,19 +62,18 @@ h3 {
   align-items: center;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 1rem 2.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   position: relative;
   position: sticky;
   top: 0;
   z-index: 100;
+  max-width: none;
+
 }
 
 .site-header {
-  /* background: var(--paper); */
-  /* background: #f6f4f16e; */
   border-bottom: 1px solid var(--stone);
-  /* backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(500px); */
   position: sticky;
   top: 0;
   z-index: 100;
@@ -177,6 +180,10 @@ main .hero {
   height: 100vh;
   overflow: hidden;
   gap: 30px;
+  height: auto;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: visible;
 }
 main .hero-text {
   display: flex;
@@ -189,6 +196,10 @@ main .hero-text h1 {
   letter-spacing: -0.06em;
   font-size: 3rem;
   align-items: left;
+}
+
+main .hero-text p {
+  font-size: 1.15rem;
 }
 main .hero-text h2 {
   font-size: 25px;
@@ -272,7 +283,7 @@ main .hero a:hover i {
 }
 main .image {
   width: 100%;
-  height: 43vh;
+  height: 44vh;
   object-fit: cover;
   object-position: center;
   border-radius: 15px;
@@ -286,18 +297,25 @@ main .image img {
   height: auto;
 }
 
+  main .imgdsp {
+  width: 100%;
+}
+
+  
+  
 /* ---------- Bio ---------- */
 
 .bio {
   background: var(--stone);
-  padding: 3rem 2.5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   margin-top: -60px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
 }
 
-/* .bio > * {
-  max-width: 700px;
-  margin: 0 auto;
-} */
+
 .bio .bio-header {
   display: flex;
   justify-content: space-between;
@@ -326,6 +344,7 @@ main .image img {
   margin-top: 10px;
   height: 100%;
   margin-bottom: -30px;
+  padding-bottom: 30px;
 }
 .bio a {
   font-size: 13px;
@@ -342,8 +361,6 @@ main .image img {
   white-space: nowrap;
   text-decoration: none;
   height: 100%;
-  /* margin-top: 5px;
-  margin-bottom: -20px; */
   transition: all 0.3s ease;
 }
 .bio-cta i {
@@ -364,21 +381,17 @@ main .image img {
   background: var(--black);
 }
 .imgdsp {
-  object-fit: cover;
-  object-position: center;
   border-radius: 15px;
   background: var(--stone);
   overflow: hidden;
   position: relative;
   margin-top: 20px;
   width: 100%;
-  height: 50vh;
-  min-height: 270px;
-  max-height: 600px;
-  filter: inset-shadow(0 8px 15px var(--shadow));
   filter: grayscale(100%);
 }
 .imgdsp img {
+  object-fit: cover;
+  object-position: center top;
   max-width: 100%;
   height: auto;
   border-radius: 15px;
@@ -387,10 +400,9 @@ main .image img {
 /* ---------- Highlights ---------- */
 
 .highlights {
-  /* max-width: 1100px; */
   margin: 0 auto;
-  padding: 3.4rem 2.5rem;
-  margin-top: -20px;
+  padding-top: 3.4rem;
+  padding-bottom: 3.4rem;
 }
 
 .highlights h2 {
@@ -410,7 +422,6 @@ main .image img {
   background: var(--stone);
   padding: 1.5rem;
   border-radius: 12px;
-  /* border-top: 0.5px solid var(--coral); */
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
@@ -423,7 +434,6 @@ main .image img {
 
 .card i {
   background: var(--coral);
-  /* color: var(--paper); */
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 5px;
@@ -436,15 +446,15 @@ main .image img {
 }
 
 /* ---------- Footer ---------- */
+
 footer {
   position: relative;
-  /* display: none; */
 }
 .site-footer {
   background: var(--black);
   color: var(--paper);
   text-align: left;
-  padding: 2rem 2.5rem;
+  padding-top: 2rem;
   padding-bottom: 100px;
 }
 
@@ -518,36 +528,74 @@ footer {
 footer .last {
   display: flex;
   align-items: center;
-  /* justify-content: center; */
   position: absolute;
-  bottom: -30px;
   right: 0;
   height: 80px;
   width: 100%;
   background-color: var(--coral);
+  bottom: 0;
 }
+
 footer .last p {
   font-weight: 500;
   color: var(--black);
   padding-left: 2.5rem;
   font-size: 0.8rem;
+  padding-left: var(--side);
 }
 
-@media (max-width: 768px) {
+ /* Special Case for Mobile */
+ 
+@media (max-width: 767px) {
   .nav-links {
     width: 80%;
     height: 100vh;
   box-shadow: -10px 0 30px var(--shadow);
 
   }
-
+ .imgdsp{
+  height: 45vh;
+  min-height: 270px;
+ max-height: 500px;
+ }
 }
 
 /* Desktop */
+
 @media (min-width: 768px) {
-  .menu-toggle {
+  main .hero{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  main .hero h1{
+    max-width: 100%;       
+  }
+
+
+  main .image {
+  width: 50%;
+  height: 42vh;
+}
+main .biogrid{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+
+}
+main .imgdsp{
+  width: 100vw;
+  max-height: 400px;
+}
+main .biogrid p{
+  max-width: 100%;
+}
+
+.menu-toggle {
     display: none;
   }
+
 
   .nav-links {
     display: flex;
@@ -563,7 +611,6 @@ footer .last p {
     border-radius: 15px;
   }
 
-  /* .nav-links a.active, */
   .nav-links a:hover {
     background: var(--coral);
     box-shadow: none;
@@ -572,6 +619,21 @@ footer .last p {
   .nav-links a.active {
     box-shadow: inset 0 0 0 var(--coral);
   }
+}
+@media (min-width:960px) {
+  main .image{
+    height: 60vh;
+
+  }
+  main .biogrid{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+  main .imgdsp{
+    max-height: 300px;
+  }
+  
 }
 
 ::selection {

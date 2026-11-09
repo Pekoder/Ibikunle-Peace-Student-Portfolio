@@ -74,17 +74,6 @@ function validateForm() {
 
   return valid;
 }
-
-// form.addEventListener('submit', event => {
-//   event.preventDefault();
-//   success.textContent = '';
-
-//   if (validateForm()) {
-//     success.textContent = 'Thanks, ' + nameInput.value.trim() + '! Your message has been received.';
-//     form.reset();
-//   }
-// });
-
 form.addEventListener('submit', async event => {
   event.preventDefault();
   success.textContent = '';

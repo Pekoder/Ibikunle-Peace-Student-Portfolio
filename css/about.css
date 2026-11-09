@@ -29,19 +29,28 @@ body {
   padding: 0;
   transition: all 0.3s ease;
 }
+.page-title,
+.content-section {
+  padding-inline: var(--side, 2.5rem);
+  margin: auto;
+}
 main .title {
   text-decoration: underline;
   text-decoration-color: var(--coral);
   text-decoration-thickness: 2px;
   margin-bottom: 20px;
+  margin-top: 30px;
 }
-.page-title {
-  padding: 1.5rem 2.5rem;
-  margin: auto;
-}
+
 .page-title h1{
   letter-spacing: -0.06em;
 
+}
+.aboutflex {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: center;
 }
 .page-title h3 {
   margin: 10px 0;
@@ -52,25 +61,32 @@ main .title {
   max-width: 350px;
   border-radius: 10px;
   background: var(--stone);
+  margin-bottom: 15px;
 }
 audio::-webkit-media-controls-panel {
   border-radius: 0;
   background-color: var(--stone);
 }
 .about-img {
-  max-width: 100%;
-  height: 40vh;
-  object-fit: cover;
-  object-position: center;
+
   position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  max-height: 420px;
+  margin-top: 0;
   overflow: hidden;
-  margin-top: 30px;
-  background-color: var(--stone);
   border-radius: 12px;
+  background-color: var(--stone);
 }
 .about-img img {
-  max-width: 100%;
-  height: auto;
+
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
   filter: grayscale(100%);
 }
 .content-section {
@@ -143,5 +159,63 @@ audio::-webkit-media-controls-panel {
 .hobbies ul li i {
   font-size: 1.4rem;
   margin-bottom: 5px;
-  /* color: var(); */
+}
+@media (min-width: 768px) {
+  .aboutflex {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 20px;
+  }
+  .about-img{
+     height: 50vh;
+  }
+  .skills-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .hobbies ul {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .hobbies ul li {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+
+/* Bottom */
+
+
+
+
+
+
+.about-img img {
+ 
+}
+
+@media (min-width: 768px) {
+  .aboutflex {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3rem;
+  }
+
+  .aboutflex p {
+    max-width: 62ch;
+  }
+
+  .about-img {
+    aspect-ratio: 4 / 5;
+    height: auto;
+    max-height: 300px;
+  }
+
+  /* Three equal hobby cards */
+  .hobbies ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
 }
