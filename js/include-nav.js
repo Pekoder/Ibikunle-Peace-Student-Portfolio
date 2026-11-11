@@ -1,7 +1,11 @@
+const navMount = document.createElement('div');
+navMount.id = 'nav-placeholder';
+document.body.prepend(navMount);
+
 fetch("nav.html")
   .then(res => res.text())
   .then(html => {
-    document.getElementById("nav-placeholder").innerHTML = html;
+    navMount.innerHTML = html;
 
     const toggle = document.querySelector(".menu-toggle");
     const links = document.querySelector(".nav-links");
