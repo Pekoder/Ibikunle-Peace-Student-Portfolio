@@ -7,8 +7,7 @@ const success = document.getElementById('form-success');
 const FORMSPREE_URL = 'https://formspree.io/f/mgaapldz'
 const submitBtn = form.querySelector('button[type="submit"]');
 
-// window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-//   formspree('initForm', { formElement: '#my-form', formId: 'mgaapldz' });
+
 
 function showError(field, message) {
   document.getElementById(field.id + '-error').textContent = message;

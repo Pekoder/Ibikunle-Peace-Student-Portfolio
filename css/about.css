@@ -172,7 +172,7 @@ audio::-webkit-media-controls-panel {
   .about-img {
     aspect-ratio: 4 / 5;
     height: auto;
-    max-height: 300px;
+    max-height: 370px;
   }
   .skills-list {
     grid-template-columns: repeat(3, 1fr);
@@ -192,7 +192,7 @@ audio::-webkit-media-controls-panel {
 @media (min-width: 950px) {
   
   .about-img {
-    max-height: 330px; 
+    max-height: 380px; 
  
 }
 }

@@ -1,11 +1,38 @@
 const navMount = document.createElement('div');
 navMount.id = 'nav-placeholder';
 document.body.prepend(navMount);
+const THEME_KEY = 'theme';
+
+
+function getSavedTheme() {
+  try { return localStorage.getItem(THEME_KEY); } catch { return null; }
+}
+
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  const btn = document.querySelector('.theme-toggle');
+  if (btn) {
+    btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+    btn.setAttribute('aria-label',
+      theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+  }
+}
+
+let currentTheme = getSavedTheme() === 'dark' ? 'dark' : 'light';
+applyTheme(currentTheme);
+
+document.addEventListener('click', event => {
+  if (!event.target.closest('.theme-toggle')) return;
+  currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  applyTheme(currentTheme);
+  try { localStorage.setItem(THEME_KEY, currentTheme); } catch {}
+});
 
 fetch("nav.html")
   .then(res => res.text())
   .then(html => {
     navMount.innerHTML = html;
+    applyTheme(currentTheme);
 
     const toggle = document.querySelector(".menu-toggle");
     const links = document.querySelector(".nav-links");
@@ -17,6 +44,7 @@ fetch("nav.html")
     }
 
     // Open/close with the button
+
     toggle.addEventListener("click", () => {
       setMenu(!links.classList.contains("open"));
     });

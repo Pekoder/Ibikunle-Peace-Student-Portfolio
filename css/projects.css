@@ -6,6 +6,7 @@
   --shadow: rgba(0, 0, 0, 0.107);
     --gutter: 2.5rem;
   --side: max(var(--gutter), calc((100% - var(--container)) / 2));
+  --container: 1100px;
 
 
   --font-heading: "Space Grotesk", sans-serif;
@@ -79,17 +80,18 @@ main {
     border-top: 2px solid var(--coral);
     font-weight: 600;
 }
-.page-title h1{
+h1{
   letter-spacing: -0.06em;
 
 }
 .project-info a{
     text-decoration: none;
-    color: var(--black);
     background-color: var(--coral);
     padding: 0.5rem 1rem;
     transition: background-color 0.3s ease;
+    color: var(--black);
     font-weight: 600;
+   
 }
 .project-info a:hover {
     background-color: var(--coral);
@@ -100,6 +102,33 @@ main {
     border-radius: 8px;
     margin-top: auto;
     align-self: flex-start;
+}
+main button{
+  padding: 13px 15px;
+  margin-bottom: 40px;
+  border-radius: 12px;
+  background-color: var(--coral);
+  border: none;
+  margin-top: 5px;
+  transition: background-color 0.3s ease;
+}
+main button:hover{
+  color: var(--coral);
+  background-color: var(--black);
+}
+main button:hover a{
+  color: var(--coral);
+}
+main button a{
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  color: var(--black);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+main button a:hover{
+  color: var(--coral);
+
 }
     @media (min-width: 600px) {
         .projects-grid { grid-template-columns: repeat(2, 1fr); }
